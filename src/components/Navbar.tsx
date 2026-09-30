@@ -48,7 +48,7 @@ export function Navbar({ visible }: NavbarProps) {
     const el = document.getElementById(href.slice(1))
     if (!el) return
     event.preventDefault()
-    const top = window.scrollY + el.getBoundingClientRect().top - 88
+    const top = window.scrollY + el.getBoundingClientRect().top
     window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
     window.history.pushState(null, '', href)
     setOpen(false)

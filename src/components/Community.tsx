@@ -3,7 +3,7 @@ import { Reveal } from './Reveal'
 
 export function Community() {
   return (
-    <section id="leadership" className="scroll-mt-24 bg-[#f3f0e8] px-6 py-24 text-[#16181d]">
+    <section id="leadership" className="bg-[#f3f0e8] px-6 py-24 text-[#16181d]">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Leadership</p>

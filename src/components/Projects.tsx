@@ -76,7 +76,7 @@ export function Projects() {
   const [front, setFront] = useState<number | null>(null)
 
   return (
-    <section id="projects" className="scroll-mt-28 bg-[#f3f0e8] px-4 py-24 text-[#16181d] sm:px-6">
+    <section id="projects" className="bg-[#f3f0e8] px-4 py-24 text-[#16181d] sm:px-6">
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <div className="mb-12 flex items-end justify-between gap-6">

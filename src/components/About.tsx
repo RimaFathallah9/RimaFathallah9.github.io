@@ -5,7 +5,7 @@ export function About() {
   const loop = [...skills, ...skills]
 
   return (
-    <section id="about" className="scroll-mt-24 bg-[#f3f0e8] text-[#16181d]">
+    <section id="about" className="bg-[#f3f0e8] text-[#16181d]">
       <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr]">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">About me</p>

@@ -3,7 +3,7 @@ import { Reveal } from './Reveal'
 
 export function Experience() {
   return (
-    <section id="experience" className="scroll-mt-24 bg-[#07080b] px-6 py-24 text-white">
+    <section id="experience" className="bg-[#07080b] px-6 py-24 text-white">
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.32em] text-white/45">Experience</p>

@@ -3,7 +3,7 @@ import { Reveal } from './Reveal'
 
 export function Research() {
   return (
-    <section id="research" className="scroll-mt-24 bg-[#07080b] px-6 py-24 text-white">
+    <section id="research" className="bg-[#07080b] px-6 py-24 text-white">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.32em] text-white/45">Research</p>
