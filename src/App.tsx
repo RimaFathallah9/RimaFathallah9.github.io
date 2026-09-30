@@ -11,6 +11,7 @@ import { Navbar } from './components/Navbar'
 import { Preloader } from './components/Preloader'
 import { Projects } from './components/Projects'
 import { Research } from './components/Research'
+import { SignalRail } from './components/SignalRail'
 
 export default function App() {
   const [ready, setReady] = useState(false)
@@ -24,6 +25,7 @@ export default function App() {
     <div id="top">
       {!ready && <Preloader onDone={finishIntro} />}
       <Navbar visible={ready} />
+      <SignalRail visible={ready} />
       <main>
         <Entrance />
         <Hero />

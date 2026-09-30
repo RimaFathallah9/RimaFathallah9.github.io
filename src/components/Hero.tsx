@@ -118,11 +118,16 @@ export function Hero() {
 
           <div className="order-1 lg:order-2">
             <div data-portrait className="relative mx-auto w-full max-w-md">
+              <span className="pointer-events-none absolute left-4 top-4 h-7 w-7 border-l border-t border-white/80" />
+              <span className="pointer-events-none absolute right-4 top-4 h-7 w-7 border-r border-t border-white/80" />
+              <span className="pointer-events-none absolute bottom-4 left-4 h-7 w-7 border-b border-l border-white/80" />
+              <span className="pointer-events-none absolute bottom-4 right-4 h-7 w-7 border-b border-r border-white/80" />
               <img
                 src="/media/profile.jpeg"
                 alt="Portrait of Rima Fathallah"
                 className="aspect-[4/5] w-full rounded-[2rem] object-cover object-top"
               />
+              <p className="absolute right-8 top-8 font-mono text-[10px] tracking-[0.32em] text-white/80">RF / 01</p>
               <div className="absolute bottom-4 left-4 rounded-full bg-black/70 px-4 py-2 text-sm text-white backdrop-blur">
                 <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-400" />
                 {profile.location}

@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { sectionTones, useActiveSection } from '../hooks/useActiveSection'
 
 const links = [
   { href: '#home', label: 'Home', id: 'home' },
@@ -9,39 +10,14 @@ const links = [
   { href: '#contact', label: 'Contact', id: 'contact' },
 ]
 
-const tones: Record<string, 'night' | 'cream'> = {
-  intro: 'night',
-  home: 'night',
-  about: 'cream',
-  research: 'night',
-  projects: 'cream',
-  experience: 'night',
-  leadership: 'cream',
-  contact: 'night',
-}
-
-const sectionOrder = Object.keys(tones)
-
-function sectionUnderNav() {
-  const mark = 88
-  let current = 'intro'
-  for (const id of sectionOrder) {
-    const el = document.getElementById(id)
-    if (!el) continue
-    const rect = el.getBoundingClientRect()
-    if (rect.top <= mark && rect.bottom > mark) current = id
-  }
-  return current
-}
-
 type NavbarProps = {
   visible: boolean
 }
 
 export function Navbar({ visible }: NavbarProps) {
   const [open, setOpen] = useState(false)
-  const [section, setSection] = useState('intro')
-  const cream = tones[section] === 'cream'
+  const section = useActiveSection(visible)
+  const cream = sectionTones[section] === 'cream'
   const activeId = section === 'intro' ? 'home' : section
 
   const goTo = (event: { preventDefault: () => void }, href: string) => {
@@ -53,28 +29,6 @@ export function Navbar({ visible }: NavbarProps) {
     window.history.pushState(null, '', href)
     setOpen(false)
   }
-
-  useEffect(() => {
-    if (!visible) return
-    let frame = 0
-    const update = () => {
-      frame = 0
-      const next = sectionUnderNav()
-      setSection((current) => (current === next ? current : next))
-    }
-    const onScroll = () => {
-      if (frame) return
-      frame = window.requestAnimationFrame(update)
-    }
-    update()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-      if (frame) window.cancelAnimationFrame(frame)
-    }
-  }, [visible])
 
   return (
     <>
