@@ -1,0 +1,123 @@
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { profile } from '../data'
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
+
+gsap.registerPlugin(ScrollTrigger)
+
+export function Hero() {
+  const root = useRef<HTMLElement>(null)
+  const reduced = usePrefersReducedMotion()
+
+  useEffect(() => {
+    if (reduced) return
+    const section = root.current
+    if (!section) return
+
+    const ctx = gsap.context(() => {
+      const words = gsap.utils.toArray<HTMLElement>('[data-word]')
+      gsap.set(words.slice(1), { autoAlpha: 0, y: 24 })
+
+      const timeline = gsap.timeline({
+        defaults: { ease: 'none' },
+        scrollTrigger: {
+          trigger: section,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.6,
+        },
+      })
+
+      words.forEach((word, index) => {
+        if (index === words.length - 1) return
+        timeline.to(word, { autoAlpha: 0, y: -24, duration: 0.45 })
+        timeline.fromTo(
+          words[index + 1],
+          { autoAlpha: 0, y: 28 },
+          { autoAlpha: 1, y: 0, duration: 0.45 },
+          '<0.12',
+        )
+        timeline.to({}, { duration: 0.25 })
+      })
+
+      timeline.to('[data-portrait]', { scale: 1.06, y: -24, duration: 1 }, 0)
+    }, section)
+
+    return () => ctx.revert()
+  }, [reduced])
+
+  return (
+    <section id="home" ref={root} className={reduced ? 'bg-[#07080b]' : 'relative h-[340vh] bg-[#07080b]'}>
+      <div className={reduced ? 'px-6 py-28' : 'sticky top-0 flex h-screen items-center overflow-hidden px-6 pb-16 pt-24'}>
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2">
+          <div className="order-2 lg:order-1">
+            <p className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-sm text-white/75">
+              {profile.role}
+            </p>
+            <h1 className="mt-6 text-5xl font-light tracking-tight text-white sm:text-7xl">
+              {profile.name}
+            </h1>
+            <p className="mt-4 max-w-xl text-lg text-white/60">{profile.tagline}</p>
+
+            <div className="relative mt-6 h-16">
+              {reduced ? (
+                <p className="font-serif text-4xl italic text-[#efe7d2] sm:text-5xl">{profile.words[0]}.</p>
+              ) : (
+                profile.words.map((word, index) => (
+                  <p
+                    key={word}
+                    data-word
+                    className={`font-serif text-4xl italic text-[#efe7d2] sm:text-5xl ${
+                      index === 0 ? '' : 'absolute left-0 top-0'
+                    }`}
+                  >
+                    {word}.
+                  </p>
+                ))
+              )}
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                className="rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-[#f3f0e8]"
+              >
+                View projects
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-white/20 px-5 py-3 text-sm text-white transition hover:bg-white/10"
+              >
+                Get in touch
+              </a>
+            </div>
+
+            <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+              {profile.stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="text-2xl font-light text-white sm:text-3xl">{stat.value}</dt>
+                  <dd className="mt-1 text-xs text-white/50 sm:text-sm">{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <div data-portrait className="relative mx-auto w-full max-w-md">
+              <img
+                src="/media/profile.jpeg"
+                alt="Portrait of Rima Fathallah"
+                className="aspect-[4/5] w-full rounded-[2rem] object-cover object-top"
+              />
+              <div className="absolute bottom-4 left-4 rounded-full bg-black/70 px-4 py-2 text-sm text-white backdrop-blur">
+                <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-400" />
+                {profile.location}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
