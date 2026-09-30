@@ -19,16 +19,16 @@ export function Navbar({ visible }: NavbarProps) {
   return (
     <>
       <motion.header
-        className="fixed left-1/2 top-4 z-50 w-[min(920px,calc(100%-1.5rem))] -translate-x-1/2"
+        className="fixed inset-x-0 top-4 z-50 mx-auto w-[min(1080px,calc(100%-1.5rem))]"
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: visible ? 0 : -24, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
-        <nav className="flex items-center justify-between rounded-full border border-white/10 bg-black/70 px-4 py-2.5 text-white shadow-2xl shadow-black/30 backdrop-blur-xl sm:px-5">
-          <a href="#top" className="text-lg font-medium tracking-tight">
+        <nav className="flex items-center justify-between gap-4 rounded-full border border-white/10 bg-black/75 px-3 py-2 text-white shadow-2xl shadow-black/30 backdrop-blur-xl sm:px-4">
+          <a href="#top" className="shrink-0 px-2 text-lg font-medium tracking-tight">
             Rima<span className="text-white/80">.</span>
           </a>
-          <ul className="hidden items-center gap-5 text-sm text-white/55 lg:flex">
+          <ul className="hidden items-center gap-6 text-sm text-white/60 md:flex">
             {links.map((link) => (
               <li key={link.href}>
                 <a className="transition hover:text-white" href={link.href}>
@@ -46,7 +46,7 @@ export function Navbar({ visible }: NavbarProps) {
             </a>
             <button
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 lg:hidden"
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 md:hidden"
               aria-expanded={open}
               aria-label={open ? 'Close menu' : 'Open menu'}
               onClick={() => setOpen((value) => !value)}
@@ -63,7 +63,7 @@ export function Navbar({ visible }: NavbarProps) {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 bg-[#07080b]/95 pt-28 lg:hidden"
+            className="fixed inset-0 z-40 bg-[#07080b]/95 pt-28 md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
