@@ -84,6 +84,28 @@ export const skillGroups = [
 
 export const skills = skillGroups.flatMap((group) => group.items)
 
+export const answers = [
+  {
+    question: 'Who is Rima Fathallah?',
+    answer:
+      'Rima Fathallah is an AI engineer in Tunisia. She is a computer science graduate who builds AI-driven systems, from research models to products people use, with over 3 years of practical experience in Python, machine learning, and work automation.',
+  },
+  {
+    question: 'What does Rima Fathallah work on?',
+    answer:
+      'She develops data-driven applications and integrates intelligent models into real-world systems. Her completed work includes a MITACS research internship at Concordia University. A pediatric cerebral palsy study with Sahloul University Hospital is still in the brainstorming phase.',
+  },
+  {
+    question: 'Where is Rima Fathallah based?',
+    answer: 'Rima Fathallah is based in Tunisia and is open to research and AI roles.',
+  },
+  {
+    question: 'How can I contact Rima Fathallah?',
+    answer:
+      'Email rimafathallah.9@gmail.com, call +216 56 479 019, or reach her on LinkedIn at tn.linkedin.com/in/rimafathallah and GitHub at github.com/RimaFathallah9.',
+  },
+]
+
 export const education = [
   {
     years: 'Sep 2025 — Present',

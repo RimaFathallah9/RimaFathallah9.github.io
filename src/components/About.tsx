@@ -1,4 +1,4 @@
-import { certificates, education, languages, profile, skillGroups, skills } from '../data'
+import { answers, certificates, education, languages, profile, skillGroups, skills } from '../data'
 import { Reveal } from './Reveal'
 
 export function About() {
@@ -68,13 +68,53 @@ export function About() {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-16 sm:grid-cols-2 lg:grid-cols-3">
-        {skillGroups.map((group) => (
-          <div key={group.label}>
-            <p className="text-xs uppercase tracking-[0.28em] text-[#7a756c]">{group.label}</p>
-            <p className="mt-3 text-[#3c4038]">{group.items.join(' · ')}</p>
-          </div>
-        ))}
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Toolkit</p>
+          <h3 className="mt-3 max-w-xl text-3xl font-light tracking-tight sm:text-4xl">
+            The stack behind the systems.
+          </h3>
+        </Reveal>
+        <div className="mt-10 grid items-start gap-4 md:grid-cols-2 xl:grid-cols-6">
+          {skillGroups.map((group, index) => (
+            <article
+              key={group.label}
+              className={`rounded-[24px] border border-[#e4ddcf] bg-white/75 p-6 ${
+                index < 3 ? 'xl:col-span-2' : 'xl:col-span-3'
+              }`}
+            >
+              <div className="flex items-baseline justify-between gap-3">
+                <h4 className="text-xs uppercase tracking-[0.22em] text-[#7a756c]">{group.label}</h4>
+                <span className="font-mono text-xs text-[#b3aa9b]">{String(index + 1).padStart(2, '0')}</span>
+              </div>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-full border border-[#e4ddcf] bg-[#f7f4ec] px-3 py-1.5 text-sm text-[#2c2f36]"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-6 pb-24">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Questions</p>
+          <h3 className="mt-3 text-3xl font-light tracking-tight sm:text-4xl">Straight answers.</h3>
+        </Reveal>
+        <dl className="mt-8 divide-y divide-[#e4ddcf] border-y border-[#e4ddcf]">
+          {answers.map((item) => (
+            <div key={item.question} className="grid gap-3 py-6 md:grid-cols-[minmax(0,16rem)_1fr] md:gap-10">
+              <dt className="text-lg font-medium">{item.question}</dt>
+              <dd className="leading-relaxed text-[#3c4038]">{item.answer}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   )

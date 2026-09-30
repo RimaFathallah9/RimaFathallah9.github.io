@@ -93,7 +93,7 @@ export function Entrance() {
 
   if (reduced) {
     return (
-      <section className="bg-[#07080b] px-6 py-24 text-white">
+      <section id="intro" className="bg-[#07080b] px-6 py-24 text-white">
         <div className="mx-auto flex max-w-3xl flex-col gap-16">
           {chapters.map((chapter) => (
             <div key={chapter.kicker}>
@@ -111,7 +111,7 @@ export function Entrance() {
   }
 
   return (
-    <section ref={root} className="relative h-[560vh] bg-[#07080b]" aria-label="Introduction">
+    <section id="intro" ref={root} className="relative h-[560vh] bg-[#07080b]" aria-label="Introduction">
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_55%)]" />
 
@@ -137,7 +137,7 @@ export function Entrance() {
             <div className="absolute -inset-16 rounded-full border border-white/10" />
             <img
               src="/media/profile.jpeg"
-              alt=""
+              alt="Portrait of Rima Fathallah"
               className="h-40 w-40 rounded-full object-cover object-top sm:h-56 sm:w-56 md:h-64 md:w-64"
             />
           </div>
