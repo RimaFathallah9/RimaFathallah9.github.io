@@ -5,7 +5,41 @@ type PreloaderProps = {
   onDone: () => void
 }
 
-const letters = ['R', 'i', 'm', 'a']
+function PixarI({ settled }: { settled: boolean }) {
+  return (
+    <span className="relative inline-block h-[1em] w-[0.34em]">
+      <motion.span
+        className="absolute bottom-0 left-0 right-0 overflow-hidden"
+        style={{ height: '0.66em', originY: 1 }}
+        animate={settled ? { scaleY: [1, 0.76, 1.05, 1], scaleX: [1, 1.12, 0.98, 1] } : { scaleY: 1, scaleX: 1 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <span className="absolute bottom-0 left-1/2 block -translate-x-1/2 leading-none">i</span>
+      </motion.span>
+      <motion.span
+        aria-hidden
+        className="absolute left-1/2 top-[0.05em] block h-[0.15em] w-[0.15em] rounded-full bg-[#1c2330]"
+        initial={{ x: '-50%', y: -40, rotate: -20 }}
+        animate={
+          settled
+            ? { x: '-50%', y: 0, rotate: 0, scaleX: [1.4, 0.85, 1], scaleY: [0.6, 1.25, 1] }
+            : {
+                x: ['-80%', '-50%', '-20%', '-50%', '-65%', '-50%'],
+                y: [-34, 4, -18, 6, -26, 2],
+                rotate: [-14, 6, -8, 10, -4, 0],
+                scaleX: [0.95, 1.3, 0.9, 1.35, 0.92, 1.25],
+                scaleY: [1.12, 0.65, 1.15, 0.6, 1.12, 0.7],
+              }
+        }
+        transition={
+          settled
+            ? { duration: 0.55, ease: [0.22, 1, 0.36, 1] }
+            : { duration: 1.45, repeat: Infinity, ease: 'easeInOut' }
+        }
+      />
+    </span>
+  )
+}
 
 export function Preloader({ onDone }: PreloaderProps) {
   const [progress, setProgress] = useState(0)
@@ -23,8 +57,17 @@ export function Preloader({ onDone }: PreloaderProps) {
     }
 
     const start = performance.now()
-    const duration = 1700
+    const duration = 2200
     let frame = 0
+    let revealTimer = 0
+    let finished = false
+
+    const finish = () => {
+      if (finished) return
+      finished = true
+      document.body.style.overflow = previous
+      onDone()
+    }
 
     const tick = (now: number) => {
       const next = Math.min(100, Math.round(((now - start) / duration) * 100))
@@ -32,27 +75,31 @@ export function Preloader({ onDone }: PreloaderProps) {
       if (next < 100) {
         frame = requestAnimationFrame(tick)
       } else {
-        window.setTimeout(() => setPhase('reveal'), 220)
+        revealTimer = window.setTimeout(() => setPhase('reveal'), 650)
       }
     }
 
     frame = requestAnimationFrame(tick)
+    const safety = window.setTimeout(finish, 5200)
+
     return () => {
       cancelAnimationFrame(frame)
+      window.clearTimeout(revealTimer)
+      window.clearTimeout(safety)
       document.body.style.overflow = previous
     }
   }, [onDone])
 
   useEffect(() => {
     if (phase !== 'reveal') return
-    const timer = window.setTimeout(() => setPhase('exit'), 1400)
+    const timer = window.setTimeout(() => setPhase('exit'), 500)
     return () => window.clearTimeout(timer)
   }, [phase])
 
   useEffect(() => {
     if (phase !== 'exit') return
     document.body.style.overflow = ''
-    const timer = window.setTimeout(onDone, 280)
+    const timer = window.setTimeout(onDone, 450)
     return () => window.clearTimeout(timer)
   }, [phase, onDone])
 
@@ -73,25 +120,30 @@ export function Preloader({ onDone }: PreloaderProps) {
         </motion.p>
 
         <div className="flex items-end text-6xl font-medium tracking-tight sm:text-8xl">
-          {letters.map((letter, index) => (
-            <motion.span
-              key={letter}
-              initial={{ opacity: 0, y: 28, filter: 'blur(10px)' }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                filter: 'blur(0px)',
-                color: index === letters.length - 1 ? ['#c8c4ba', '#1c2330'] : '#1c2330',
-              }}
-              transition={{
-                delay: 0.12 + index * 0.14,
-                duration: index === letters.length - 1 ? 0.9 : 0.7,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
+          {['R', 'm', 'a'].map((letter, index) => {
+            const order = index === 0 ? 0 : index + 1
+            return (
+              <span key={letter} className="contents">
+                {index === 1 && <PixarI settled={progress >= 100} />}
+                <motion.span
+                  initial={{ opacity: 0, y: 28, filter: 'blur(10px)' }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    filter: 'blur(0px)',
+                    color: letter === 'a' ? ['#c8c4ba', '#1c2330'] : '#1c2330',
+                  }}
+                  transition={{
+                    delay: 0.12 + order * 0.14,
+                    duration: letter === 'a' ? 0.9 : 0.7,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  {letter}
+                </motion.span>
+              </span>
+            )
+          })}
           <motion.span
             className="mb-2 ml-1 text-4xl text-[#1c2330] sm:text-5xl"
             initial={{ opacity: 0 }}
@@ -116,20 +168,7 @@ export function Preloader({ onDone }: PreloaderProps) {
         </div>
       </div>
 
-      <motion.div
-        className="absolute left-1/2 z-20 bg-[#07080b]"
-        style={{ borderRadius: '50%', x: '-50%' }}
-        initial={{ width: '130vw', height: '18vh', bottom: '-14vh' }}
-        animate={
-          phase === 'load'
-            ? { width: '130vw', height: '18vh', bottom: '-14vh' }
-            : { width: '340vw', height: '340vh', bottom: '-70vh' }
-        }
-        transition={{ duration: 1.15, ease: [0.76, 0, 0.24, 1] }}
-        onAnimationComplete={() => {
-          if (phase === 'reveal') setPhase('exit')
-        }}
-      />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[12vh] rounded-t-[50%] bg-[#07080b]" />
     </motion.div>
   )
 }
