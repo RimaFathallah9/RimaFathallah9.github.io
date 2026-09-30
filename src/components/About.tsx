@@ -102,7 +102,7 @@ export function About() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-6 pb-24">
+      <div id="faq" className="mx-auto max-w-6xl scroll-mt-28 px-6 pb-24">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Questions</p>
           <h3 className="mt-3 text-3xl font-light tracking-tight sm:text-4xl">Straight answers.</h3>

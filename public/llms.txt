@@ -4,22 +4,26 @@
 
 Rima Fathallah is a computer science graduate with over 3 years of practical experience in Python, machine learning, and work automation. She develops data-driven applications and integrates intelligent models into real-world systems.
 
+## Answers
+
+- Who is Rima Fathallah? An AI engineer in Tunisia and a computer science graduate who builds AI-driven systems, with over 3 years of practical experience in Python, machine learning, and work automation.
+- What does Rima Fathallah work on? Data-driven applications and intelligent models in real-world systems, including a completed MITACS research internship at Concordia University. A pediatric cerebral palsy study with Sahloul University Hospital is still in the brainstorming phase.
+- Where is Rima Fathallah based? Tunisia. She is open to research and AI roles.
+- How can I contact Rima Fathallah? Email rimafathallah.9@gmail.com or call +216 56 479 019.
+
+## Links
+
+- [Portfolio](https://rimafathallah9.github.io/): research, projects, experience, and contact
+- [CV](https://rimafathallah9.github.io/cv/Rima-Fathallah-CV.pdf): August 2026 extended resume
+- [LinkedIn](https://tn.linkedin.com/in/rimafathallah): professional profile
+- [GitHub](https://github.com/RimaFathallah9): code
+
 ## Facts
 
 - Role: AI Engineer
 - Location: Tunisia
-- Status: Open to research and AI roles
 - Languages: Arabic (native), English (DET C1), French (DELF B2), German (ELIT A1)
-- Completed research: MITACS Global Research Internship at Concordia University, Montreal, January 2025 to July 2025
-- In progress: a pediatric cerebral palsy study with Sahloul University Hospital, still in the brainstorming phase, with Hached University Hospital
-- Current work: AI Developer Engineer at Exceed Your Limits Marketing, March 2026 to present, Germany, remote
+- Completed research: MITACS Global Research Internship, Concordia University, Montreal, January 2025 to July 2025
+- In progress: pediatric cerebral palsy study with Sahloul University Hospital, brainstorming phase, with Hached University Hospital
+- Current role: AI Developer Engineer, Exceed Your Limits Marketing, March 2026 to present, Germany, remote
 - Selected projects: NEXOVA, Autonomous Data Analysis Agent, Patient Risk Assessment, Misinformation Detection, ToolMind, DEXTRA, Talynk
-
-## Contact
-
-- Site: https://rimafathallah9.github.io/
-- Email: rimafathallah.9@gmail.com
-- Phone: +216 56 479 019
-- LinkedIn: https://tn.linkedin.com/in/rimafathallah
-- GitHub: https://github.com/RimaFathallah9
-- CV: https://rimafathallah9.github.io/cv/Rima-Fathallah-CV.pdf

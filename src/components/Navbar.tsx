@@ -44,6 +44,16 @@ export function Navbar({ visible }: NavbarProps) {
   const cream = tones[section] === 'cream'
   const activeId = section === 'intro' ? 'home' : section
 
+  const goTo = (event: { preventDefault: () => void }, href: string) => {
+    const el = document.getElementById(href.slice(1))
+    if (!el) return
+    event.preventDefault()
+    const top = window.scrollY + el.getBoundingClientRect().top - 88
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
+    window.history.pushState(null, '', href)
+    setOpen(false)
+  }
+
   useEffect(() => {
     if (!visible) return
     let frame = 0
@@ -69,29 +79,30 @@ export function Navbar({ visible }: NavbarProps) {
   return (
     <>
       <motion.header
-        className="fixed inset-x-0 top-4 z-50 mx-auto w-[min(72rem,calc(100%-3rem))]"
+        className="pointer-events-none fixed inset-x-0 top-4 z-[70] mx-auto w-[min(72rem,calc(100%-3rem))]"
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: visible ? 0 : -24, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
         <nav
-          className={`flex items-center justify-between gap-4 rounded-full border px-3 py-2 shadow-xl backdrop-blur-xl transition-colors duration-500 sm:px-4 ${
+          aria-label="Primary"
+          className={`pointer-events-auto flex items-center justify-between gap-4 rounded-full border px-3 py-2 shadow-xl backdrop-blur-xl transition-colors duration-500 sm:px-4 ${
             cream
               ? 'border-[#1c1914]/10 bg-[#fbf8f2]/90 text-[#16181d] shadow-black/10'
               : 'border-white/10 bg-[#07080b]/85 text-white shadow-black/40'
           }`}
-          aria-label="Primary"
         >
-          <a href="#top" className="shrink-0 px-2 text-lg font-medium tracking-tight">
+          <a href="#top" className="shrink-0 px-2 text-lg font-medium tracking-tight" onClick={(event) => goTo(event, '#top')}>
             Rima<span className={cream ? 'text-[#16181d]/70' : 'text-white/80'}>.</span>
           </a>
-          <ul className="hidden items-center gap-1 text-sm md:flex">
+          <ul className="hidden items-center gap-1 text-sm sm:flex">
             {links.map((link) => {
               const active = activeId === link.id
               return (
                 <li key={link.href}>
                   <a
                     href={link.href}
+                    onClick={(event) => goTo(event, link.href)}
                     aria-current={active ? 'location' : undefined}
                     className={`rounded-full px-3 py-1.5 transition-colors duration-500 ${
                       active
@@ -112,6 +123,7 @@ export function Navbar({ visible }: NavbarProps) {
           <div className="flex items-center gap-2">
             <a
               href="#contact"
+              onClick={(event) => goTo(event, '#contact')}
               className={`hidden rounded-full px-4 py-2 text-sm font-medium transition sm:inline-flex ${
                 cream ? 'bg-[#16181d] text-[#f3f0e8] hover:bg-black' : 'bg-white text-black hover:bg-[#f3f0e8]'
               }`}
@@ -120,7 +132,7 @@ export function Navbar({ visible }: NavbarProps) {
             </a>
             <button
               type="button"
-              className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border md:hidden ${
+              className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border sm:hidden ${
                 cream ? 'border-[#16181d]/15' : 'border-white/15'
               }`}
               aria-expanded={open}
@@ -143,7 +155,7 @@ export function Navbar({ visible }: NavbarProps) {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 bg-[#07080b]/95 pt-28 md:hidden"
+            className="fixed inset-0 z-[65] bg-[#07080b]/95 pt-28 sm:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -159,7 +171,7 @@ export function Navbar({ visible }: NavbarProps) {
                   <a
                     href={link.href}
                     className="block py-3 text-4xl font-light text-white"
-                    onClick={() => setOpen(false)}
+                    onClick={(event) => goTo(event, link.href)}
                   >
                     {link.label}
                   </a>
