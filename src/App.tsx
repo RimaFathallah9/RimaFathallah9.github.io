@@ -10,6 +10,7 @@ import { Hero } from './components/Hero'
 import { Navbar } from './components/Navbar'
 import { Preloader } from './components/Preloader'
 import { Projects } from './components/Projects'
+import { Research } from './components/Research'
 
 export default function App() {
   const [ready, setReady] = useState(false)
@@ -27,6 +28,7 @@ export default function App() {
         <Entrance />
         <Hero />
         <About />
+        <Research />
         <Projects />
         <Experience />
         <Community />

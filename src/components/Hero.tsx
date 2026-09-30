@@ -48,13 +48,25 @@ export function Hero() {
   }, [reduced])
 
   return (
-    <section id="home" ref={root} className={reduced ? 'bg-[#07080b]' : 'relative h-[340vh] bg-[#07080b]'}>
-      <div className={reduced ? 'px-6 py-28' : 'sticky top-0 flex h-screen items-center overflow-hidden px-6 pb-16 pt-24'}>
+    <section id="home" ref={root} className={reduced ? 'bg-[#07080b]' : 'relative bg-[#07080b] lg:h-[340vh]'}>
+      <div
+        className={
+          reduced
+            ? 'px-6 py-28'
+            : 'flex min-h-screen items-center px-6 py-28 lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden lg:py-24'
+        }
+      >
         <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
-            <p className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-sm text-white/75">
-              {profile.role}
-            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-sm text-white/75">
+                {profile.role}
+              </p>
+              <p className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-1.5 text-sm text-white/70">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                {profile.status}
+              </p>
+            </div>
             <h1 className="mt-6 text-5xl font-light tracking-tight text-white sm:text-7xl">
               {profile.name}
             </h1>
@@ -86,10 +98,11 @@ export function Hero() {
                 View projects
               </a>
               <a
-                href="#contact"
+                href={profile.cv}
+                download
                 className="rounded-full border border-white/20 px-5 py-3 text-sm text-white transition hover:bg-white/10"
               >
-                Get in touch
+                Download CV
               </a>
             </div>
 

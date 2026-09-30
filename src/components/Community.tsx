@@ -1,40 +1,36 @@
-import { community } from '../data'
+import { awards, volunteering } from '../data'
 import { Reveal } from './Reveal'
 
 export function Community() {
   return (
-    <section id="community" className="scroll-mt-24 bg-[#07080b] px-6 py-24 text-white">
+    <section id="leadership" className="scroll-mt-24 bg-[#f3f0e8] px-6 py-24 text-[#16181d]">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.32em] text-white/45">Public participation</p>
-          <h2 className="mt-3 text-4xl font-light sm:text-5xl">Community</h2>
-          <p className="mt-4 max-w-xl text-white/60">
-            Congresses, student branches, and rooms where the work left the screen.
-          </p>
+          <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Leadership</p>
+          <h2 className="mt-3 text-4xl font-light sm:text-5xl">Volunteering and awards</h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {community.map((event, index) => (
-            <Reveal key={event.title} delay={(index % 3) * 0.06}>
-              <article className="group overflow-hidden rounded-[24px] border border-white/10 bg-white/5">
-                {event.image ? (
-                  <div className="h-48 overflow-hidden">
-                    <img
-                      src={event.image}
-                      alt=""
-                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                ) : (
-                  <div className="flex h-28 items-end bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_55%)] px-5 pb-4">
-                    <span className="font-serif text-4xl italic text-white/30">{event.year}</span>
-                  </div>
-                )}
-                <div className="p-5">
-                  <p className="font-mono text-xs tracking-wider text-white/40">{event.year}</p>
-                  <h3 className="mt-2 text-xl font-light">{event.title}</h3>
-                  <p className="mt-1 text-sm text-white/55">{event.detail}</p>
-                </div>
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          {volunteering.map((role, index) => (
+            <Reveal key={role.place} delay={(index % 2) * 0.05}>
+              <article className="h-full rounded-[24px] border border-[#e4ddcf] bg-white/70 p-6">
+                <p className="font-mono text-xs tracking-wider text-[#7a756c]">{role.time}</p>
+                <h3 className="mt-3 text-2xl font-medium">{role.title}</h3>
+                <p className="mt-1 text-[#5c584f]">{role.place}</p>
+                <p className="mt-4 leading-relaxed text-[#3c4038]">{role.detail}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {awards.map((award) => (
+            <Reveal key={award.title}>
+              <article className="rounded-[24px] bg-[#16181d] p-6 text-[#f3f0e8]">
+                <p className="font-mono text-xs tracking-wider text-white/45">{award.date}</p>
+                <h3 className="mt-3 font-serif text-3xl italic">{award.title}</h3>
+                <p className="mt-2 text-white/60">{award.by}</p>
+                <p className="mt-4 text-white/80">{award.result}</p>
               </article>
             </Reveal>
           ))}

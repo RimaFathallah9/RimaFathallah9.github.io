@@ -3,9 +3,9 @@ import { useState } from 'react'
 
 const links = [
   { href: '#home', label: 'Home' },
+  { href: '#research', label: 'Research' },
   { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
-  { href: '#community', label: 'Community' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -28,7 +28,7 @@ export function Navbar({ visible }: NavbarProps) {
           <a href="#top" className="text-lg font-medium tracking-tight">
             Rima<span className="text-white/80">.</span>
           </a>
-          <ul className="hidden items-center gap-6 text-sm text-white/55 md:flex">
+          <ul className="hidden items-center gap-5 text-sm text-white/55 lg:flex">
             {links.map((link) => (
               <li key={link.href}>
                 <a className="transition hover:text-white" href={link.href}>
@@ -46,7 +46,7 @@ export function Navbar({ visible }: NavbarProps) {
             </a>
             <button
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 md:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 lg:hidden"
               aria-expanded={open}
               aria-label={open ? 'Close menu' : 'Open menu'}
               onClick={() => setOpen((value) => !value)}
@@ -63,7 +63,7 @@ export function Navbar({ visible }: NavbarProps) {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 bg-[#07080b]/95 pt-28 md:hidden"
+            className="fixed inset-0 z-40 bg-[#07080b]/95 pt-28 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

@@ -8,13 +8,13 @@ gsap.registerPlugin(ScrollTrigger)
 const chapters = [
   {
     kicker: 'A vision is forming',
-    title: 'Every useful system starts as a question.',
-    text: 'Somewhere, a pattern is waiting to be understood.',
+    title: 'Every intelligent system starts as a question.',
+    text: 'Somewhere, a signal is waiting to become a decision.',
   },
   {
     kicker: 'The search',
-    title: 'You are looking for someone who can build it carefully.',
-    text: 'Someone who thinks in data, product, and people.',
+    title: 'You are looking for someone who can carry it from research into a product.',
+    text: 'Someone who thinks in models, data, and the people who use them.',
   },
 ]
 
@@ -149,7 +149,7 @@ export function Entrance() {
               Intelligent systems
             </h2>
             <p className="mt-3 text-xs text-white/55 sm:text-base">
-              Models, data, and interfaces shaped around real use.
+              Models, agents, and interfaces shaped around real use.
             </p>
           </div>
           <div
@@ -157,10 +157,10 @@ export function Entrance() {
             className="absolute bottom-[16%] left-4 max-w-[11rem] text-left sm:left-10 sm:max-w-xs md:bottom-[18%] md:left-16 md:max-w-sm"
           >
             <h2 className="text-xl font-light leading-tight text-white sm:text-3xl md:text-5xl">
-              Real-world building
+              Research that ships
             </h2>
             <p className="mt-3 text-xs text-white/55 sm:text-base">
-              Internships, teaching, and tools people can actually use.
+              From Concordia and MITACS to hospitals and live products.
             </p>
           </div>
         </div>

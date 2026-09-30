@@ -1,4 +1,4 @@
-import { aboutParagraphs, courses, education, skills } from '../data'
+import { certificates, education, languages, profile, skillGroups, skills } from '../data'
 import { Reveal } from './Reveal'
 
 export function About() {
@@ -6,36 +6,52 @@ export function About() {
 
   return (
     <section id="about" className="scroll-mt-24 bg-[#f3f0e8] text-[#16181d]">
-      <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr]">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">About me</p>
           <h2 className="mt-4 text-4xl font-light tracking-tight sm:text-5xl">
-            A developer focused on data science and the web.
+            AI-driven systems, built to be used.
           </h2>
           <div className="mt-8 space-y-5 text-lg leading-relaxed text-[#3c4038]">
-            {aboutParagraphs.map((paragraph) => (
+            {profile.summary.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {languages.map((language) => (
+              <div key={language.name} className="rounded-2xl border border-[#e4ddcf] bg-white/60 px-4 py-3">
+                <p className="font-medium">{language.name}</p>
+                <p className="text-sm text-[#7a756c]">{language.level}</p>
+              </div>
             ))}
           </div>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Formal education</p>
+          <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Education</p>
           <ol className="mt-6 space-y-6 border-l border-[#d9d3c6] pl-6">
             {education.map((item) => (
-              <li key={item.years} className="relative">
+              <li key={item.title} className="relative">
                 <span className="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-[#16181d]" />
                 <p className="font-mono text-xs tracking-wider text-[#7a756c]">{item.years}</p>
                 <p className="mt-1 text-xl font-medium">{item.title}</p>
                 <p className="text-[#5c584f]">{item.school}</p>
+                <p className="mt-2 text-sm leading-relaxed text-[#5c584f]">{item.detail}</p>
               </li>
             ))}
           </ol>
-          <div className="mt-8 flex flex-wrap gap-2">
-            {courses.map((course) => (
-              <span key={course} className="rounded-full border border-[#d5cfc2] px-3 py-1 text-sm">
-                {course}
-              </span>
+        </Reveal>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-6 pb-16">
+        <Reveal>
+          <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Certificates</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {certificates.map((item) => (
+              <article key={item.title} className="rounded-2xl border border-[#e4ddcf] bg-white/70 p-5">
+                <h3 className="text-lg font-medium leading-snug">{item.title}</h3>
+                <p className="mt-2 text-sm text-[#7a756c]">{item.issuer}</p>
+              </article>
             ))}
           </div>
         </Reveal>
@@ -44,12 +60,21 @@ export function About() {
       <div className="overflow-hidden border-y border-[#ddd6c8] py-6">
         <div className="marquee-track">
           {loop.map((skill, index) => (
-            <span key={`${skill}-${index}`} className="mx-6 text-2xl font-light tracking-tight text-[#16181d] sm:text-4xl">
+            <span key={`${skill}-${index}`} className="mx-6 text-2xl font-light tracking-tight sm:text-4xl">
               {skill}
               <span className="mx-6 text-[#c8bba4]">✦</span>
             </span>
           ))}
         </div>
+      </div>
+
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-16 sm:grid-cols-2 lg:grid-cols-3">
+        {skillGroups.map((group) => (
+          <div key={group.label}>
+            <p className="text-xs uppercase tracking-[0.28em] text-[#7a756c]">{group.label}</p>
+            <p className="mt-3 text-[#3c4038]">{group.items.join(' · ')}</p>
+          </div>
+        ))}
       </div>
     </section>
   )
