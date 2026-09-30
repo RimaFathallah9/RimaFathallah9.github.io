@@ -17,7 +17,10 @@ export function Hero() {
 
     const ctx = gsap.context(() => {
       const words = gsap.utils.toArray<HTMLElement>('[data-word]')
+      const weights = gsap.utils.toArray<HTMLElement>('[data-weight]')
       gsap.set(words.slice(1), { autoAlpha: 0, y: 24 })
+      gsap.set(weights, { scaleX: 0.2, opacity: 0.35, transformOrigin: 'left center' })
+      if (weights[0]) gsap.set(weights[0], { scaleX: 1, opacity: 1 })
 
       const timeline = gsap.timeline({
         defaults: { ease: 'none' },
@@ -38,6 +41,10 @@ export function Hero() {
           { autoAlpha: 1, y: 0, duration: 0.45 },
           '<0.12',
         )
+        if (weights[index] && weights[index + 1]) {
+          timeline.to(weights[index], { scaleX: 0.2, opacity: 0.35, duration: 0.45 }, '<')
+          timeline.to(weights[index + 1], { scaleX: 1, opacity: 1, duration: 0.45 }, '<')
+        }
         timeline.to({}, { duration: 0.25 })
       })
 
@@ -88,6 +95,21 @@ export function Hero() {
                   </p>
                 ))
               )}
+            </div>
+
+            <div className="mt-4 flex items-center gap-4" aria-hidden>
+              <p className="font-mono text-[10px] uppercase tracking-[0.32em] text-white/40">Attention</p>
+              <div className="flex items-center gap-1.5">
+                {profile.words.map((word, index) => (
+                  <span
+                    key={word}
+                    data-weight
+                    className={`block h-px w-8 origin-left bg-[#efe7d2] ${
+                      index === 0 ? '' : 'scale-x-[0.2] opacity-35'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
