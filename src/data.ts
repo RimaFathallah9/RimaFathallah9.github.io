@@ -2,7 +2,7 @@ export const profile = {
   firstName: 'Rima',
   name: 'Rima Fathallah',
   role: 'AI Engineer',
-  location: 'Sousse, Tunisia',
+  location: 'Tunisia',
   status: 'Open to research and AI roles',
   tagline:
     'Computer science graduate building AI-driven systems, from research models to products people use.',
@@ -137,7 +137,7 @@ export const studies = [
     program: 'With Hached University Hospital',
     title: 'AI-driven modeling of neuroplasticity trajectories in pediatric cerebral palsy',
     time: 'Aug 2026 — Present',
-    place: 'Sousse, Tunisia',
+    place: 'Tunisia',
     status: 'Brainstorming',
     summary:
       'Still in the brainstorming phase, not yet built. The aim is to model how neuroplasticity changes over time in children with cerebral palsy.',
@@ -244,7 +244,7 @@ export const experience = [
     type: 'Part-time',
     place: 'Go My Code',
     time: 'Sep 2023 — Apr 2025',
-    where: 'Sousse, Tunisia',
+    where: 'Tunisia',
     href: '',
     linkLabel: '',
     points: [
@@ -258,7 +258,7 @@ export const experience = [
     type: 'Internship',
     place: 'Ozeol.com',
     time: 'Jun 2024 — Sep 2024',
-    where: 'Sousse, Tunisia',
+    where: 'Tunisia',
     href: '',
     linkLabel: '',
     points: [
@@ -272,7 +272,7 @@ export const experience = [
     type: 'Internship',
     place: 'Draexlmaier',
     time: 'Aug 2023 — Oct 2023',
-    where: 'Sousse, Tunisia',
+    where: 'Tunisia',
     href: '',
     linkLabel: '',
     points: [
@@ -286,7 +286,7 @@ export const experience = [
     type: 'Part-time',
     place: 'Elit School of Languages',
     time: 'Jun 2022 — Oct 2022',
-    where: 'Sousse, Tunisia',
+    where: 'Tunisia',
     href: '',
     linkLabel: '',
     points: [
@@ -300,7 +300,7 @@ export const experience = [
     type: 'Internship',
     place: 'BillCom Consulting',
     time: 'Jul 2022 — Sep 2022',
-    where: 'Sousse, Tunisia',
+    where: 'Tunisia',
     href: '',
     linkLabel: '',
     points: [
