@@ -1,12 +1,13 @@
 import { awards, volunteering } from '../data'
 import { Reveal } from './Reveal'
+import { SectionMark } from './SectionMark'
 
 export function Community() {
   return (
     <section id="leadership" className="bg-[#f3f0e8] px-6 py-24 text-[#16181d]">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Leadership</p>
+          <SectionMark index="05" label="Leadership" />
           <h2 className="mt-3 text-4xl font-light sm:text-5xl">Volunteering and awards</h2>
         </Reveal>
 

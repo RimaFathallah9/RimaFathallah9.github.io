@@ -1,12 +1,13 @@
 import { profile } from '../data'
 import { Reveal } from './Reveal'
+import { SectionMark } from './SectionMark'
 
 export function Contact() {
   return (
     <section id="contact" className="bg-[#07080b] px-6 py-24 text-white">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.32em] text-white/45">Contact</p>
+          <SectionMark index="06" label="Contact" tone="night" />
           <h2 className="mt-4 max-w-3xl text-5xl font-light leading-tight sm:text-7xl">
             Let&apos;s build the next system.
           </h2>

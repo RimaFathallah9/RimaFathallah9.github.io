@@ -1,5 +1,6 @@
 import { answers, certificates, education, languages, profile, skillGroups, skills } from '../data'
 import { Reveal } from './Reveal'
+import { SectionMark } from './SectionMark'
 
 export function About() {
   const loop = [...skills, ...skills]
@@ -8,7 +9,7 @@ export function About() {
     <section id="about" className="bg-[#f3f0e8] text-[#16181d]">
       <div className="mx-auto grid max-w-6xl gap-16 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr]">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">About me</p>
+          <SectionMark index="01" label="About" />
           <h2 className="mt-4 text-4xl font-light tracking-tight sm:text-5xl">
             AI-driven systems, built to be used.
           </h2>

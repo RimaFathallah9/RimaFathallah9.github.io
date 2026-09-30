@@ -65,15 +65,17 @@ export function Hero() {
       >
         <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
-            <div className="flex flex-wrap items-center gap-2">
-              <p className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-sm text-white/75">
-                {profile.role}
-              </p>
-              <p className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-1.5 text-sm text-white/70">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                {profile.status}
-              </p>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.28em]">
+              <p className="text-[#efe7d2]">{profile.role}</p>
+              <span className="text-white/25">/</span>
+              <p className="text-white/50">Research</p>
+              <span className="text-white/25">/</span>
+              <p className="text-white/50">{profile.location}</p>
             </div>
+            <p className="mt-4 inline-flex items-center gap-2 text-sm text-white/70">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              {profile.status}
+            </p>
             <h1 className="mt-6 text-5xl font-light tracking-tight text-white sm:text-7xl">
               {profile.name}
             </h1>
@@ -129,9 +131,10 @@ export function Hero() {
             </div>
 
             <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
-              {profile.stats.map((stat) => (
+              {profile.stats.map((stat, index) => (
                 <div key={stat.label}>
-                  <dt className="text-2xl font-light text-white sm:text-3xl">{stat.value}</dt>
+                  <p className="font-mono text-[10px] tracking-[0.28em] text-white/35">0{index + 1}</p>
+                  <dt className="mt-2 text-2xl font-light text-white sm:text-3xl">{stat.value}</dt>
                   <dd className="mt-1 text-xs text-white/50 sm:text-sm">{stat.label}</dd>
                 </div>
               ))}
@@ -149,7 +152,7 @@ export function Hero() {
                 alt="Portrait of Rima Fathallah"
                 className="aspect-[4/5] w-full rounded-[2rem] object-cover object-top"
               />
-              <p className="absolute right-8 top-8 font-mono text-[10px] tracking-[0.32em] text-white/80">RF / 01</p>
+              <p className="absolute right-8 top-8 font-mono text-[10px] tracking-[0.32em] text-white/80">FIG. 01</p>
               <div className="absolute bottom-4 left-4 rounded-full bg-black/70 px-4 py-2 text-sm text-white backdrop-blur">
                 <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-400" />
                 {profile.location}

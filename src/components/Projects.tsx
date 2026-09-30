@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { projects } from '../data'
 import { Reveal } from './Reveal'
+import { SectionMark } from './SectionMark'
 
 function ProjectCard({
   project,
@@ -81,12 +82,9 @@ export function Projects() {
         <Reveal>
           <div className="mb-12 flex items-end justify-between gap-6">
             <div>
-              <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Selected work</p>
+              <SectionMark index="03" label="Projects" />
               <h2 className="mt-3 text-4xl font-light sm:text-5xl">Projects</h2>
             </div>
-            <p className="hidden max-w-xs text-sm text-[#5c584f] sm:block">
-              
-            </p>
           </div>
         </Reveal>
 
