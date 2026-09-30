@@ -85,7 +85,7 @@ export function Projects() {
               <h2 className="mt-3 text-4xl font-light sm:text-5xl">Projects</h2>
             </div>
             <p className="hidden max-w-xs text-sm text-[#5c584f] sm:block">
-              Each card slides up and covers the one before it.
+              
             </p>
           </div>
         </Reveal>
