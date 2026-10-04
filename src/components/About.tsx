@@ -11,7 +11,7 @@ export function About() {
         <Reveal>
           <SectionMark index="01" label="About" />
           <h2 className="mt-4 text-4xl font-light tracking-tight sm:text-5xl">
-            AI-driven systems, built to be used.
+            A clinical question, reached through mathematics.
           </h2>
           <div className="mt-8 space-y-5 text-lg leading-relaxed text-[#3c4038]">
             {profile.summary.map((paragraph) => (

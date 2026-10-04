@@ -57,6 +57,16 @@ function ProjectCard({
                   {tag}
                 </span>
               ))}
+              {project.href ? (
+                <a
+                  href={project.href}
+                  className="rounded-full border border-[#16181d] px-3 py-1 text-sm"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+              ) : null}
               <button
                 type="button"
                 className="ml-auto text-sm text-[#7a756c] underline-offset-4 transition hover:text-[#16181d] hover:underline"
@@ -82,7 +92,7 @@ export function Projects() {
         <Reveal>
           <div className="mb-12 flex items-end justify-between gap-6">
             <div>
-              <SectionMark index="03" label="Projects" />
+              <SectionMark index="04" label="Projects" />
               <h2 className="mt-3 text-4xl font-light sm:text-5xl">Projects</h2>
             </div>
           </div>

@@ -13,8 +13,8 @@ const chapters = [
   },
   {
     kicker: 'The search',
-    title: 'You are looking for someone who can carry it from research into a product.',
-    text: 'Someone who thinks in models, data, and the people who use them.',
+    title: 'You are looking for someone who can carry a clinical question into a model.',
+    text: 'Someone who thinks in trajectories, data, and the people the study is for.',
   },
 ]
 

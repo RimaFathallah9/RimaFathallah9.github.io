@@ -7,7 +7,7 @@ export function Experience() {
     <section id="experience" className="bg-[#07080b] px-6 py-24 text-white">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <SectionMark index="04" label="Experience" tone="night" />
+          <SectionMark index="05" label="Experience" tone="night" />
           <h2 className="mt-3 max-w-xl text-4xl font-light sm:text-5xl">
             Research, products, and the rooms where they were taught.
           </h2>

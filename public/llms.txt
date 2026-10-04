@@ -1,29 +1,33 @@
 # Rima Fathallah
 
-> Rima Fathallah is an AI engineer in Tunisia. She builds machine learning systems, from research models to products people use, and is open to research and AI roles.
+> Rima Fathallah is an AI and neuroscience researcher in Tunisia, working on pediatric cerebral palsy. She is open to research collaborations.
 
-Rima Fathallah is a computer science graduate with over 3 years of practical experience in Python, machine learning, and work automation. She develops data-driven applications and integrates intelligent models into real-world systems.
+She trained in mathematics and computer science and is in a data science engineering program at École Polytechnique de Sousse. The cerebral palsy study is in design with Sahloul University Hospital and Hached University Hospital. A MITACS research internship at Concordia University is completed.
 
 ## Answers
 
-- Who is Rima Fathallah? An AI engineer in Tunisia and a computer science graduate who builds AI-driven systems, with over 3 years of practical experience in Python, machine learning, and work automation.
-- What does Rima Fathallah work on? Data-driven applications and intelligent models in real-world systems, including a completed MITACS research internship at Concordia University. A pediatric cerebral palsy study with Sahloul University Hospital is still in the brainstorming phase.
-- Where is Rima Fathallah based? Tunisia. She is open to research and AI roles.
+- Who is Rima Fathallah? An AI and neuroscience researcher in Tunisia, working on pediatric cerebral palsy. She is designing a study of how neuroplasticity changes over time, with Sahloul University Hospital and Hached University Hospital. She trained in mathematics and computer science and is in a data science engineering program at École Polytechnique de Sousse.
+- What does Rima Fathallah work on? A study of neuroplasticity in children with cerebral palsy, and machine learning models. A MITACS research internship at Concordia University is completed. She is open to research collaborations and AI roles.
+- Where is Rima Fathallah based? Tunisia. She is a student at École Polytechnique de Sousse and is open to research collaborations and AI roles.
 - How can I contact Rima Fathallah? Email rimafathallah.9@gmail.com or call +216 56 479 019.
 
 ## Links
 
-- [Portfolio](https://rimafathallah9.github.io/): research, projects, experience, and contact
-- [CV](https://rimafathallah9.github.io/cv/Rima-Fathallah-CV.pdf): August 2026 extended resume
+- [Portfolio](https://rimafathallah9.github.io/): research, papers, projects, teaching, and contact
+- [CV](https://rimafathallah9.github.io/cv/Rima-Fathallah-CV.pdf): downloadable resume
 - [LinkedIn](https://tn.linkedin.com/in/rimafathallah): professional profile
 - [GitHub](https://github.com/RimaFathallah9): code
 
 ## Facts
 
-- Role: AI Engineer
+- Role: AI and neuroscience researcher
+- Field: pediatric cerebral palsy, machine learning
+- Affiliation: École Polytechnique de Sousse
 - Location: Tunisia
 - Languages: Arabic (native), English (DET C1), French (DELF B2), German (ELIT A1)
+- Current study: neuroplasticity trajectories in pediatric cerebral palsy, Sahloul University Hospital with Hached University Hospital, August 2026 to present, study design
 - Completed research: MITACS Global Research Internship, Concordia University, Montreal, January 2025 to July 2025
-- In progress: pediatric cerebral palsy study with Sahloul University Hospital, brainstorming phase, with Hached University Hospital
+- Code: https://github.com/RimaFathallah9/NEXOVA-Web-R8 and https://github.com/RimaFathallah9
+- Teaching: Junior Instructor, Go My Code, September 2023 to April 2025, Tunisia. IEEE mentor for separate sessions in AI, NLP, and explainable AI.
+- Certification: French DELF B2.
 - Current role: AI Developer Engineer, Exceed Your Limits Marketing, March 2026 to present, Germany, remote
-- Selected projects: NEXOVA, Autonomous Data Analysis Agent, Patient Risk Assessment, Misinformation Detection, ToolMind, DEXTRA, Talynk

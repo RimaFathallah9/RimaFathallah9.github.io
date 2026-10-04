@@ -68,10 +68,11 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[11px] uppercase tracking-[0.28em]">
               <p className="text-[#efe7d2]">{profile.role}</p>
               <span className="text-white/25">/</span>
-              <p className="text-white/50">Research</p>
+              <p className="text-white/50">{profile.field}</p>
               <span className="text-white/25">/</span>
               <p className="text-white/50">{profile.location}</p>
             </div>
+            <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.22em] text-white/40">{profile.affiliation}</p>
             <p className="mt-4 inline-flex items-center gap-2 text-sm text-white/70">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
               {profile.status}
@@ -116,10 +117,10 @@ export function Hero() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#projects"
+                href="#research"
                 className="rounded-full bg-white px-5 py-3 text-sm font-medium text-black transition hover:bg-[#f3f0e8]"
               >
-                View projects
+                View research
               </a>
               <a
                 href={profile.cv}

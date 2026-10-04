@@ -1,16 +1,18 @@
 export const profile = {
   firstName: 'Rima',
   name: 'Rima Fathallah',
-  role: 'AI Engineer',
+  role: 'AI and neuroscience researcher',
+  affiliation: 'École Polytechnique de Sousse',
+  field: 'Pediatric cerebral palsy',
   location: 'Tunisia',
-  status: 'Open to research and AI roles',
+  status: 'Open to research collaborations and AI roles',
   tagline:
-    'Computer science graduate building AI-driven systems, from research models to products people use.',
+    'I study how neuroplasticity changes over time in children with cerebral palsy, using machine learning. The study is still being shaped with Sahloul and Hached university hospitals.',
   summary: [
-    'I specialize in AI-driven solutions and intelligent systems, with over 3 years of practical experience in Python, machine learning, and work automation.',
-    'I develop data-driven applications, tighten analytical processes, and integrate intelligent models into real-world systems. I am looking for the next step to deepen my research and my work in AI and data science.',
+    'The question I want to work on is how a child’s brain changes after early injury, and whether a model can describe that change over time. That study is in design with Sahloul University Hospital and Hached University Hospital.',
+    'I came to this through mathematics, then computer science, and now a data science engineering degree at École Polytechnique de Sousse. Before this question, I completed a MITACS research internship at Concordia University, building and validating machine learning models and a platform the team used to document results.',
   ],
-  words: ['Research', 'Models', 'Systems', 'Impact'],
+  words: ['Plasticity', 'Models', 'Trajectories', 'Questions'],
   stats: [
     { value: '3+', label: 'Years in AI and data' },
     { value: '7', label: 'Selected projects' },
@@ -88,16 +90,16 @@ export const answers = [
   {
     question: 'Who is Rima Fathallah?',
     answer:
-      'Rima Fathallah is an AI engineer in Tunisia. She is a computer science graduate who builds AI-driven systems, from research models to products people use, with over 3 years of practical experience in Python, machine learning, and work automation.',
+      'Rima Fathallah is an AI and neuroscience researcher in Tunisia, working on pediatric cerebral palsy. She is designing a study of how neuroplasticity changes over time, with Sahloul University Hospital and Hached University Hospital. She trained in mathematics and computer science and is in a data science engineering program at École Polytechnique de Sousse.',
   },
   {
     question: 'What does Rima Fathallah work on?',
     answer:
-      'She develops data-driven applications and integrates intelligent models into real-world systems. Her completed work includes a MITACS research internship at Concordia University. A pediatric cerebral palsy study with Sahloul University Hospital is still in the brainstorming phase.',
+      'She is designing a study of neuroplasticity in children with cerebral palsy, and she builds machine learning models. A MITACS research internship at Concordia University is completed. She is open to research collaborations and AI roles.',
   },
   {
     question: 'Where is Rima Fathallah based?',
-    answer: 'Rima Fathallah is based in Tunisia and is open to research and AI roles.',
+    answer: 'Rima Fathallah is based in Tunisia. She is a student at École Polytechnique de Sousse and is open to research collaborations and AI roles.',
   },
   {
     question: 'How can I contact Rima Fathallah?',
@@ -145,24 +147,90 @@ export const certificates = [
 
 export const studies = [
   {
+    partner: 'Sahloul University Hospital',
+    program: 'With Hached University Hospital',
+    title: 'AI-driven modeling of neuroplasticity trajectories in pediatric cerebral palsy',
+    time: 'Aug 2026 — Present',
+    place: 'Tunisia',
+    status: 'Study design',
+    focus: true,
+    question: 'How does neuroplasticity change over time in children with cerebral palsy?',
+    why: 'Cerebral palsy affects movement from early life. This study aims to model that change over time, with two university hospitals in Tunisia.',
+    methods: 'The approach is part of the design now underway with the hospitals.',
+    resultLabel: 'Where it stands',
+    result:
+      'Opened in August 2026 with Sahloul University Hospital, with Hached University Hospital. The aim is a model of how neuroplasticity changes over time in children with cerebral palsy.',
+  },
+  {
     partner: 'Concordia University',
     program: 'MITACS Global Research Internship',
     title: 'Machine learning models and an automated research platform',
     time: 'Jan 2025 — Jul 2025',
     place: 'Montreal, Canada',
     status: 'Completed',
-    summary:
+    focus: false,
+    question:
+      'How can a research team prototype a model and document the result without rebuilding the same steps by hand?',
+    why: 'A research team needs a way to try a model and keep a record of what they tried. This internship built that support.',
+    methods: 'Python, XGBoost, LSTM, Pandas, Scikit-learn, and SQL.',
+    resultLabel: 'What was delivered',
+    result:
       'Developed, calibrated, and validated machine learning models, prepared the datasets, and built an automated platform the research team used to prototype and document results.',
   },
+]
+
+export const updates = [
   {
-    partner: 'Sahloul University Hospital',
-    program: 'With Hached University Hospital',
-    title: 'AI-driven modeling of neuroplasticity trajectories in pediatric cerebral palsy',
-    time: 'Aug 2026 — Present',
-    place: 'Tunisia',
-    status: 'Brainstorming',
-    summary:
-      'Still in the brainstorming phase, not yet built. The aim is to model how neuroplasticity changes over time in children with cerebral palsy.',
+    date: 'Aug 2026',
+    text: 'Opened a pediatric cerebral palsy study with Sahloul University Hospital, with Hached University Hospital. It is in study design.',
+  },
+  {
+    date: 'May 2026',
+    text: 'Second place in the 2026 AI NIGHT Challenge, ARSII. Fourth place in the 2024 edition.',
+  },
+  {
+    date: 'Jul 2025',
+    text: 'Completed a MITACS Global Research Internship at Concordia University in Montreal.',
+  },
+]
+
+export const outputs = [
+  {
+    label: 'Ongoing study',
+    title: 'Neuroplasticity in pediatric cerebral palsy',
+    detail:
+      'Study design with Sahloul University Hospital and Hached University Hospital. The aim is to model how neuroplasticity changes over time in children with cerebral palsy.',
+    href: '#research',
+    link: 'Read the study',
+  },
+  {
+    label: 'Completed internship',
+    title: 'MITACS, Concordia University',
+    detail:
+      'In Montreal, from January to July 2025, built and validated machine learning models and a platform the research team used to prototype and document results.',
+    href: '#research',
+    link: 'Read the study',
+  },
+  {
+    label: 'Competition',
+    title: 'AI NIGHT Challenge',
+    detail: 'Second place in the 2026 edition, and fourth place in the 2024 edition. Held by ARSII.',
+    href: '',
+    link: '',
+  },
+  {
+    label: 'Competition',
+    title: 'Herotopia Challenge',
+    detail: 'First place at IEEE TSYP 13, December 2025.',
+    href: '',
+    link: '',
+  },
+  {
+    label: 'Code',
+    title: 'NEXOVA',
+    detail: 'An AI platform that analyzes and optimizes energy consumption.',
+    href: 'https://github.com/RimaFathallah9/NEXOVA-Web-R8',
+    link: 'GitHub',
   },
 ]
 
@@ -174,7 +242,7 @@ export const projects = [
     description:
       'An AI platform that analyzes and optimizes energy consumption, so electricity use drops and the system runs more efficiently.',
     tags: ['Python', 'Machine Learning', 'Pandas', 'NumPy', 'Scikit-learn'],
-    href: '',
+    href: 'https://github.com/RimaFathallah9/NEXOVA-Web-R8',
   },
   {
     title: 'Autonomous Data Analysis Agent',
@@ -330,6 +398,40 @@ export const experience = [
       'Automated Linux deployment and maintenance so the platform needed less manual work.',
     ],
     tags: ['Python', 'MySQL', 'Linux', 'SQL'],
+  },
+]
+
+export const teaching = [
+  {
+    time: 'Sep 2023 — Apr 2025',
+    title: 'Junior Instructor',
+    place: 'Go My Code',
+    where: 'Tunisia',
+    points: [
+      'Mentored students across AI, game development, and creative technologies, with a 95% project completion rate.',
+      'Taught generative AI, Unity, Scratch, and Adobe, and student performance rose by 30%.',
+    ],
+  },
+  {
+    time: 'IEEE',
+    title: 'AI',
+    place: 'IEEE mentor',
+    where: '',
+    points: ['Mentored an IEEE session on AI.'],
+  },
+  {
+    time: 'IEEE',
+    title: 'NLP',
+    place: 'IEEE mentor',
+    where: '',
+    points: ['Mentored an IEEE session on natural language processing.'],
+  },
+  {
+    time: 'IEEE',
+    title: 'Explainable AI',
+    place: 'IEEE mentor',
+    where: '',
+    points: ['Mentored an IEEE session on explainable AI.'],
   },
 ]
 

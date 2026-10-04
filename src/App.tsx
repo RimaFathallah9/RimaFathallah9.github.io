@@ -10,6 +10,7 @@ import { Hero } from './components/Hero'
 import { Navbar } from './components/Navbar'
 import { Preloader } from './components/Preloader'
 import { Projects } from './components/Projects'
+import { Record } from './components/Record'
 import { Research } from './components/Research'
 import { SignalRail } from './components/SignalRail'
 
@@ -31,6 +32,7 @@ export default function App() {
         <Hero />
         <About />
         <Research />
+        <Record />
         <Projects />
         <Experience />
         <Community />

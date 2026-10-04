@@ -5,9 +5,10 @@ const chapters: { id: SectionId; label: string }[] = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'research', label: 'Research' },
+  { id: 'papers', label: 'Work' },
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
-  { id: 'leadership', label: 'Leadership' },
+  { id: 'teaching', label: 'Teaching' },
   { id: 'contact', label: 'Contact' },
 ]
 

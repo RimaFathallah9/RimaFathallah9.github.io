@@ -5,8 +5,9 @@ import { sectionTones, useActiveSection } from '../hooks/useActiveSection'
 const links = [
   { href: '#home', label: 'Home', id: 'home' },
   { href: '#research', label: 'Research', id: 'research' },
+  { href: '#papers', label: 'Work', id: 'papers' },
   { href: '#projects', label: 'Projects', id: 'projects' },
-  { href: '#experience', label: 'Experience', id: 'experience' },
+  { href: '#teaching', label: 'Teaching', id: 'teaching' },
   { href: '#contact', label: 'Contact', id: 'contact' },
 ]
 
@@ -78,7 +79,7 @@ export function Navbar({ visible }: NavbarProps) {
             <a
               href="#contact"
               onClick={(event) => goTo(event, '#contact')}
-              className={`hidden rounded-full px-4 py-2 text-sm font-medium transition sm:inline-flex ${
+              className={`hidden rounded-full px-4 py-2 text-sm font-medium transition xl:inline-flex ${
                 cream ? 'bg-[#16181d] text-[#f3f0e8] hover:bg-black' : 'bg-white text-black hover:bg-[#f3f0e8]'
               }`}
             >

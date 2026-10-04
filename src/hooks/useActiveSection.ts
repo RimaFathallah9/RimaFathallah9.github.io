@@ -5,9 +5,10 @@ export const sectionTones = {
   home: 'night',
   about: 'cream',
   research: 'night',
+  papers: 'cream',
   projects: 'cream',
   experience: 'night',
-  leadership: 'cream',
+  teaching: 'cream',
   contact: 'night',
 } as const
 

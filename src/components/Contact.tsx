@@ -7,12 +7,13 @@ export function Contact() {
     <section id="contact" className="bg-[#07080b] px-6 py-24 text-white">
       <div className="mx-auto max-w-5xl">
         <Reveal>
-          <SectionMark index="06" label="Contact" tone="night" />
+          <SectionMark index="07" label="Contact" tone="night" />
           <h2 className="mt-4 max-w-3xl text-5xl font-light leading-tight sm:text-7xl">
-            Let&apos;s build the next system.
+            Open to a research collaboration.
           </h2>
           <p className="mt-6 max-w-xl text-lg text-white/60">
-            {profile.location}. {profile.status}.
+            {profile.affiliation}, {profile.location}. {profile.status}. Email is the direct way to write. No lab street
+            address is listed.
           </p>
         </Reveal>
 
