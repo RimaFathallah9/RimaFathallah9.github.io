@@ -12,6 +12,8 @@
     <meta name="author" content="Rima Fathallah" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://rimafathallah9.github.io/" />
+    <link rel="me" href="https://tn.linkedin.com/in/rimafathallah" />
+    <link rel="me" href="https://github.com/RimaFathallah9" />
     <meta name="theme-color" content="#07080b" />
     <meta property="og:title" content="Rima Fathallah | AI and neuroscience researcher in Tunisia" />
     <meta
@@ -38,8 +40,18 @@
         "@graph": [
           {
             "@type": "Person",
+            "@id": "https://rimafathallah9.github.io/#person",
             "name": "Rima Fathallah",
             "jobTitle": "AI and neuroscience researcher",
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "École Polytechnique de Sousse",
+              "address": { "@type": "PostalAddress", "addressCountry": "TN" }
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "ESSTHS, Hammam Sousse"
+            },
             "description": "AI and neuroscience researcher in Tunisia, working on pediatric cerebral palsy with Sahloul and Hached university hospitals.",
             "url": "https://rimafathallah9.github.io/",
             "image": "https://rimafathallah9.github.io/media/profile.jpeg",
@@ -73,8 +85,9 @@
             "inLanguage": "en"
           },
           {
-            "@type": "WebPage",
+            "@type": ["WebPage", "ProfilePage"],
             "name": "Rima Fathallah | AI and neuroscience researcher in Tunisia",
+            "mainEntity": { "@id": "https://rimafathallah9.github.io/#person" },
             "url": "https://rimafathallah9.github.io/",
             "description": "Rima Fathallah is an AI and neuroscience researcher in Tunisia, working on pediatric cerebral palsy with Sahloul and Hached. Email her to collaborate.",
             "inLanguage": "en",
@@ -144,7 +157,22 @@
         University Hospital. Email rimafathallah.9@gmail.com or call +216 56 479 019.
       </p>
     </noscript>
-    <div id="root"></div>
+    <div id="root">
+      <main style="background:#07080b;color:#f3f0e8;font-family:Georgia,serif;padding:4rem 1.5rem;max-width:42rem;margin:0 auto">
+        <h1>Rima Fathallah</h1>
+        <p>
+          Rima Fathallah is an AI and neuroscience researcher in Tunisia. She is designing a study of how
+          neuroplasticity changes over time in children with cerebral palsy, with Sahloul University Hospital and
+          Hached University Hospital.
+        </p>
+        <p>
+          <a href="mailto:rimafathallah.9@gmail.com">rimafathallah.9@gmail.com</a>
+          · <a href="tel:+21656479019">+216 56 479 019</a>
+          · <a href="/ieee/">IEEE</a>
+          · <a href="/cv/Rima-Fathallah-CV.pdf">CV</a>
+        </p>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
