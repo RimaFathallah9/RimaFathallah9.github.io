@@ -106,7 +106,7 @@ export function About() {
       <div id="faq" className="mx-auto max-w-6xl scroll-mt-28 px-6 pb-24">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.32em] text-[#7a756c]">Questions</p>
-          <h3 className="mt-3 text-3xl font-light tracking-tight sm:text-4xl">Straight answers.</h3>
+          <h3 className="mt-3 text-3xl font-light tracking-tight sm:text-4xl">Answers.</h3>
         </Reveal>
         <dl className="mt-8 divide-y divide-[#e4ddcf] border-y border-[#e4ddcf]">
           {answers.map((item) => (
