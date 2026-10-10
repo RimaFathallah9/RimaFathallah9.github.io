@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { sectionTones, useActiveSection } from '../hooks/useActiveSection'
 
 const links = [
@@ -8,20 +8,39 @@ const links = [
   { href: '#papers', label: 'Work', id: 'papers' },
   { href: '#projects', label: 'Projects', id: 'projects' },
   { href: '#teaching', label: 'Teaching', id: 'teaching' },
+  { href: '/ieee', label: 'IEEE', id: 'ieee' },
   { href: '#contact', label: 'Contact', id: 'contact' },
 ]
 
 type NavbarProps = {
   visible: boolean
+  page?: 'home' | 'ieee'
 }
 
-export function Navbar({ visible }: NavbarProps) {
+export function Navbar({ visible, page = 'home' }: NavbarProps) {
   const [open, setOpen] = useState(false)
-  const section = useActiveSection(visible)
-  const cream = sectionTones[section] === 'cream'
-  const activeId = section === 'intro' ? 'home' : section
+  const [scrolled, setScrolled] = useState(false)
+  const section = useActiveSection(visible && page === 'home')
+  const cream = page === 'ieee' ? scrolled : sectionTones[section] === 'cream'
+  const activeId = page === 'ieee' ? 'ieee' : section === 'intro' ? 'home' : section
+
+  useEffect(() => {
+    if (page !== 'ieee') return
+    const onScroll = () => setScrolled(window.scrollY > 80)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [page])
 
   const goTo = (event: { preventDefault: () => void }, href: string) => {
+    if (!href.startsWith('#')) {
+      setOpen(false)
+      return
+    }
+    if (page === 'ieee') {
+      setOpen(false)
+      return
+    }
     const el = document.getElementById(href.slice(1))
     if (!el) return
     event.preventDefault()
@@ -47,17 +66,18 @@ export function Navbar({ visible }: NavbarProps) {
               : 'border-white/10 bg-[#07080b]/85 text-white shadow-black/40'
           }`}
         >
-          <a href="#top" className="shrink-0 px-2 text-lg font-medium tracking-tight" onClick={(event) => goTo(event, '#top')}>
+          <a href={page === 'ieee' ? '/' : '#top'} className="shrink-0 px-2 text-lg font-medium tracking-tight" onClick={(event) => goTo(event, page === 'ieee' ? '/' : '#top')}>
             Rima<span className={cream ? 'text-[#16181d]/70' : 'text-white/80'}>.</span>
           </a>
           <ul className="hidden items-center gap-1 text-sm sm:flex">
             {links.map((link) => {
               const active = activeId === link.id
+              const href = link.href.startsWith('#') && page === 'ieee' ? `/${link.href}` : link.href
               return (
                 <li key={link.href}>
                   <a
-                    href={link.href}
-                    onClick={(event) => goTo(event, link.href)}
+                    href={href}
+                    onClick={(event) => goTo(event, href)}
                     aria-current={active ? 'location' : undefined}
                     className={`rounded-full px-3 py-1.5 transition-colors duration-500 ${
                       active
@@ -77,8 +97,8 @@ export function Navbar({ visible }: NavbarProps) {
           </ul>
           <div className="flex items-center gap-2">
             <a
-              href="#contact"
-              onClick={(event) => goTo(event, '#contact')}
+              href={page === 'ieee' ? '/#contact' : '#contact'}
+              onClick={(event) => goTo(event, page === 'ieee' ? '/#contact' : '#contact')}
               className={`hidden rounded-full px-4 py-2 text-sm font-medium transition xl:inline-flex ${
                 cream ? 'bg-[#16181d] text-[#f3f0e8] hover:bg-black' : 'bg-white text-black hover:bg-[#f3f0e8]'
               }`}
@@ -116,7 +136,9 @@ export function Navbar({ visible }: NavbarProps) {
             exit={{ opacity: 0 }}
           >
             <ul className="flex flex-col gap-2 px-8">
-              {links.map((link, index) => (
+              {links.map((link, index) => {
+                const href = link.href.startsWith('#') && page === 'ieee' ? `/${link.href}` : link.href
+                return (
                 <motion.li
                   key={link.href}
                   initial={{ y: 16, opacity: 0 }}
@@ -124,14 +146,14 @@ export function Navbar({ visible }: NavbarProps) {
                   transition={{ delay: 0.05 * index }}
                 >
                   <a
-                    href={link.href}
+                    href={href}
                     className="block py-3 text-4xl font-light text-white"
-                    onClick={(event) => goTo(event, link.href)}
+                    onClick={(event) => goTo(event, href)}
                   >
                     {link.label}
                   </a>
                 </motion.li>
-              ))}
+              )})}
             </ul>
           </motion.div>
         )}

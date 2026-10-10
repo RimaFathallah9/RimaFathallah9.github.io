@@ -111,7 +111,9 @@ export function About() {
         <dl className="mt-8 divide-y divide-[#e4ddcf] border-y border-[#e4ddcf]">
           {answers.map((item) => (
             <div key={item.question} className="grid gap-3 py-6 md:grid-cols-[minmax(0,16rem)_1fr] md:gap-10">
-              <dt className="text-lg font-medium">{item.question}</dt>
+              <dt>
+                <h2 className="text-lg font-medium leading-snug">{item.question}</h2>
+              </dt>
               <dd className="leading-relaxed text-[#3c4038]">{item.answer}</dd>
             </div>
           ))}

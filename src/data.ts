@@ -412,26 +412,43 @@ export const teaching = [
       'Taught generative AI, Unity, Scratch, and Adobe, and student performance rose by 30%.',
     ],
   },
+]
+
+export const ieeeMentoring = [
   {
-    time: 'IEEE',
     title: 'AI',
-    place: 'IEEE mentor',
-    where: '',
-    points: ['Mentored an IEEE session on AI.'],
+    detail: 'Mentored an IEEE session on AI.',
   },
   {
-    time: 'IEEE',
     title: 'NLP',
-    place: 'IEEE mentor',
-    where: '',
-    points: ['Mentored an IEEE session on natural language processing.'],
+    detail: 'Mentored an IEEE session on natural language processing.',
   },
   {
-    time: 'IEEE',
     title: 'Explainable AI',
-    place: 'IEEE mentor',
-    where: '',
-    points: ['Mentored an IEEE session on explainable AI.'],
+    detail: 'Mentored an IEEE session on explainable AI.',
+  },
+]
+
+export const congresses = [
+  {
+    title: 'IEEE TSYP 13',
+    date: 'Dec 2025',
+    detail: 'Attended. First place in the Herotopia Challenge.',
+    image: '',
+  },
+  {
+    title: 'IEEE TSYP 11',
+    date: '2023',
+    detail:
+      'Organized the congress as Chair of the ESSTHS student branch, with 1,200+ participants and 15 challenges.',
+    image: '',
+  },
+  {
+    title: 'DEXTRA',
+    date: 'Sep 2025 — Dec 2025',
+    detail:
+      'Congress challenge. AI-powered smart gloves that translate between sign language and speech in real time.',
+    image: '',
   },
 ]
 

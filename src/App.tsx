@@ -13,6 +13,11 @@ import { Projects } from './components/Projects'
 import { Record } from './components/Record'
 import { Research } from './components/Research'
 import { SignalRail } from './components/SignalRail'
+import { Volunteering } from './components/Volunteering'
+
+function isIeeePage() {
+  return window.location.pathname.replace(/\/$/, '') === '/ieee'
+}
 
 export default function App() {
   const [ready, setReady] = useState(false)
@@ -21,6 +26,18 @@ export default function App() {
     setReady(true)
     window.setTimeout(() => ScrollTrigger.refresh(), 80)
   }, [])
+
+  if (isIeeePage()) {
+    return (
+      <div id="top">
+        <Navbar visible page="ieee" />
+        <main>
+          <Volunteering />
+        </main>
+        <Footer />
+      </div>
+    )
+  }
 
   return (
     <div id="top">

@@ -14,6 +14,7 @@ She trained in mathematics and computer science and is in a data science enginee
 ## Links
 
 - [Portfolio](https://rimafathallah9.github.io/): research, papers, projects, teaching, and contact
+- [IEEE](https://rimafathallah9.github.io/ieee/): mentoring sessions, volunteering, and congresses
 - [CV](https://rimafathallah9.github.io/cv/Rima-Fathallah-CV.pdf): downloadable resume
 - [LinkedIn](https://tn.linkedin.com/in/rimafathallah): professional profile
 - [GitHub](https://github.com/RimaFathallah9): code
@@ -28,6 +29,7 @@ She trained in mathematics and computer science and is in a data science enginee
 - Current study: neuroplasticity trajectories in pediatric cerebral palsy, Sahloul University Hospital with Hached University Hospital, August 2026 to present, study design
 - Completed research: MITACS Global Research Internship, Concordia University, Montreal, January 2025 to July 2025
 - Code: https://github.com/RimaFathallah9/NEXOVA-Web-R8 and https://github.com/RimaFathallah9
-- Teaching: Junior Instructor, Go My Code, September 2023 to April 2025, Tunisia. IEEE mentor for separate sessions in AI, NLP, and explainable AI.
+- Teaching: Junior Instructor, Go My Code, September 2023 to April 2025, Tunisia.
+- IEEE page: mentoring sessions in AI, NLP, and explainable AI. Volunteering with UNESCO Chaire EDE × IEEE, IEEE SIGHT Tunisia, IEEEXtreme 18.0 Region 8, and as Chair of the IEEE ESSTHS Student Branch. Congresses: IEEE TSYP 13 (December 2025), IEEE TSYP 11 (2023), DEXTRA congress challenge (September 2025 to December 2025).
 - Certification: French DELF B2.
 - Current role: AI Developer Engineer, Exceed Your Limits Marketing, March 2026 to present, Germany, remote

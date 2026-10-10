@@ -10,7 +10,7 @@ export function Community() {
           <SectionMark index="06" label="Teaching" />
           <h2 className="mt-3 max-w-2xl text-4xl font-light sm:text-5xl">Teaching.</h2>
           <p className="mt-4 max-w-2xl text-lg text-[#3c4038]">
-            Classroom teaching at Go My Code, and separate IEEE mentoring sessions in AI, NLP, and explainable AI.
+            Classroom teaching at Go My Code.
           </p>
         </Reveal>
 
